@@ -1,0 +1,574 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY baseball "http://sabrns.com/ontology/baseball/baseball.owl#" >
+    <!ENTITY baseball2 "http://sabrns.com/ontology/baseball/baseball.owl#3" >
+    <!ENTITY baseball3 "http://sabrns.com/ontology/baseball/baseball.owl#2" >
+]>
+
+
+<rdf:RDF xmlns="http://sabrns.com/ontology#"
+     xml:base="http://sabrns.com/ontology"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:baseball="http://sabrns.com/ontology/baseball/baseball.owl#"
+     xmlns:baseball3="&baseball;2"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:baseball2="&baseball;3"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://sabrns.com/ontology/baseball/baseball.owl">
+        <owl:versionInfo rdf:datatype="&xsd;string">0.1.1</owl:versionInfo>
+        <rdfs:comment rdf:datatype="&xsd;string">Used for baseball player statistics. Making these data accessible in new and interesting ways.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#ALCentral -->
+
+    <owl:Class rdf:about="&baseball;ALCentral">
+        <rdfs:subClassOf rdf:resource="&baseball;AmericanLeague"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#ALEast -->
+
+    <owl:Class rdf:about="&baseball;ALEast">
+        <rdfs:subClassOf rdf:resource="&baseball;AmericanLeague"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#ALWest -->
+
+    <owl:Class rdf:about="&baseball;ALWest">
+        <rdfs:subClassOf rdf:resource="&baseball;AmericanLeague"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#AmericanLeague -->
+
+    <owl:Class rdf:about="&baseball;AmericanLeague">
+        <rdfs:subClassOf rdf:resource="&baseball;MajorLeagueBaseball"/>
+        <owl:disjointWith rdf:resource="&baseball;NationalLeague"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#Batter -->
+
+    <owl:Class rdf:about="&baseball;Batter">
+        <rdfs:subClassOf rdf:resource="&baseball;Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#League -->
+
+    <owl:Class rdf:about="&baseball;League">
+        <owl:disjointWith rdf:resource="&baseball;Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#MajorLeagueBaseball -->
+
+    <owl:Class rdf:about="&baseball;MajorLeagueBaseball">
+        <rdfs:subClassOf rdf:resource="&baseball;League"/>
+        <owl:disjointWith rdf:resource="&baseball;MinorLeagueBaseball"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#MinorLeagueBaseball -->
+
+    <owl:Class rdf:about="&baseball;MinorLeagueBaseball">
+        <rdfs:subClassOf rdf:resource="&baseball;League"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#NLCentral -->
+
+    <owl:Class rdf:about="&baseball;NLCentral">
+        <rdfs:subClassOf rdf:resource="&baseball;NationalLeague"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#NLEast -->
+
+    <owl:Class rdf:about="&baseball;NLEast">
+        <rdfs:subClassOf rdf:resource="&baseball;NationalLeague"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#NLWest -->
+
+    <owl:Class rdf:about="&baseball;NLWest">
+        <rdfs:subClassOf rdf:resource="&baseball;NationalLeague"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#NationalLeague -->
+
+    <owl:Class rdf:about="&baseball;NationalLeague">
+        <rdfs:subClassOf rdf:resource="&baseball;MajorLeagueBaseball"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#Pitcher -->
+
+    <owl:Class rdf:about="&baseball;Pitcher">
+        <rdfs:subClassOf rdf:resource="&baseball;Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#Player -->
+
+    <owl:Class rdf:about="&baseball;Player"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#2b -->
+
+    <owl:NamedIndividual rdf:about="&baseball;2b">
+        <rdf:type rdf:resource="&baseball;Batter"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Doubles</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#3b -->
+
+    <owl:NamedIndividual rdf:about="&baseball;3b">
+        <rdf:type rdf:resource="&baseball;Batter"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Triples</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#ab -->
+
+    <owl:NamedIndividual rdf:about="&baseball;ab">
+        <rdf:type rdf:resource="&baseball;Batter"/>
+        <rdfs:comment rdf:datatype="&xsd;string">At-bats</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#avg -->
+
+    <owl:NamedIndividual rdf:about="&baseball;avg">
+        <rdf:type rdf:resource="&baseball;Batter"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Batting average (H/AB)</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#bats -->
+
+    <owl:NamedIndividual rdf:about="&baseball;bats">
+        <rdf:type rdf:resource="&baseball;Player"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Bats right or left handed</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#bb -->
+
+    <owl:NamedIndividual rdf:about="&baseball;bb">
+        <rdf:type rdf:resource="&baseball;Batter"/>
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Walks</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#bf -->
+
+    <owl:NamedIndividual rdf:about="&baseball;bf">
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Batters faced</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#birthdate -->
+
+    <owl:NamedIndividual rdf:about="&baseball;birthdate">
+        <rdf:type rdf:resource="&baseball;Player"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Date of birth</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#bk -->
+
+    <owl:NamedIndividual rdf:about="&baseball;bk">
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Balks</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#cg -->
+
+    <owl:NamedIndividual rdf:about="&baseball;cg">
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Complete games</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#cs -->
+
+    <owl:NamedIndividual rdf:about="&baseball;cs">
+        <rdf:type rdf:resource="&baseball;Batter"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Caught stealing (could apply to pitchers throwing for an out)</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#er -->
+
+    <owl:NamedIndividual rdf:about="&baseball;er">
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Earned runs</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#era -->
+
+    <owl:NamedIndividual rdf:about="&baseball;era">
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Earned run average (ER * 9) / IP (could be generated on-the-fly)</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#g -->
+
+    <owl:NamedIndividual rdf:about="&baseball;g">
+        <rdf:type rdf:resource="&baseball;Batter"/>
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Games played</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#gf -->
+
+    <owl:NamedIndividual rdf:about="&baseball;gf">
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Games finished</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#givenname -->
+
+    <owl:NamedIndividual rdf:about="&baseball;givenname">
+        <rdf:type rdf:resource="&baseball;Player"/>
+        <rdfs:comment rdf:datatype="&xsd;string">aka. first name</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#gs -->
+
+    <owl:NamedIndividual rdf:about="&baseball;gs">
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Games started</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#h -->
+
+    <owl:NamedIndividual rdf:about="&baseball;h">
+        <rdf:type rdf:resource="&baseball;Batter"/>
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Hits, (pitchers=hits against)</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#hbp -->
+
+    <owl:NamedIndividual rdf:about="&baseball;hbp">
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Hit by pitch</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#hr -->
+
+    <owl:NamedIndividual rdf:about="&baseball;hr">
+        <rdf:type rdf:resource="&baseball;Batter"/>
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Home runs, (pitcher=home runs allowed)</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#ibb -->
+
+    <owl:NamedIndividual rdf:about="&baseball;ibb">
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Intentional bases on balls (walk)</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#ip -->
+
+    <owl:NamedIndividual rdf:about="&baseball;ip">
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Innings pitched</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#l -->
+
+    <owl:NamedIndividual rdf:about="&baseball;l">
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Loses</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#league -->
+
+    <owl:NamedIndividual rdf:about="&baseball;league">
+        <rdf:type rdf:resource="&baseball;Player"/>
+        <rdfs:comment rdf:datatype="&xsd;string">ex: NLEast, NLCentral, NLWest, etc..</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#nickname -->
+
+    <owl:NamedIndividual rdf:about="&baseball;nickname">
+        <rdf:type rdf:resource="&baseball;Player"/>
+        <rdfs:comment rdf:datatype="&xsd;string">ex: The Babe</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#pa -->
+
+    <owl:NamedIndividual rdf:about="&baseball;pa">
+        <rdf:type rdf:resource="&baseball;Batter"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Plate appearances</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#position -->
+
+    <owl:NamedIndividual rdf:about="&baseball;position">
+        <rdf:type rdf:resource="&baseball;Player"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Fielding position (2-9), pitchers are all 1</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#r -->
+
+    <owl:NamedIndividual rdf:about="&baseball;r">
+        <rdf:type rdf:resource="&baseball;Batter"/>
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Runs</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#rbi -->
+
+    <owl:NamedIndividual rdf:about="&baseball;rbi">
+        <rdf:type rdf:resource="&baseball;Batter"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Runs batted in</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#sb -->
+
+    <owl:NamedIndividual rdf:about="&baseball;sb">
+        <rdf:type rdf:resource="&baseball;Batter"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Stolen bases</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#sho -->
+
+    <owl:NamedIndividual rdf:about="&baseball;sho">
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Shutouts</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#so -->
+
+    <owl:NamedIndividual rdf:about="&baseball;so">
+        <rdf:type rdf:resource="&baseball;Batter"/>
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Strikeouts</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#surname -->
+
+    <owl:NamedIndividual rdf:about="&baseball;surname">
+        <rdf:type rdf:resource="&baseball;Player"/>
+        <rdfs:comment rdf:datatype="&xsd;string">aka. last name</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#sv -->
+
+    <owl:NamedIndividual rdf:about="&baseball;sv">
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Saves</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#team -->
+
+    <owl:NamedIndividual rdf:about="&baseball;team">
+        <rdf:type rdf:resource="&baseball;Player"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Comma separated listed of teams this player played on this year.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#throws -->
+
+    <owl:NamedIndividual rdf:about="&baseball;throws">
+        <rdf:type rdf:resource="&baseball;Player"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Does the player throw right or left handed</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#w -->
+
+    <owl:NamedIndividual rdf:about="&baseball;w">
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Wins</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#wp -->
+
+    <owl:NamedIndividual rdf:about="&baseball;wp">
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Wild pitches</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sabrns.com/ontology/baseball/baseball.owl#year -->
+
+    <owl:NamedIndividual rdf:about="&baseball;year">
+        <rdf:type rdf:resource="&baseball;Batter"/>
+        <rdf:type rdf:resource="&baseball;Pitcher"/>
+        <rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&baseball;ALCentral"/>
+            <rdf:Description rdf:about="&baseball;ALEast"/>
+            <rdf:Description rdf:about="&baseball;ALWest"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&baseball;NLCentral"/>
+            <rdf:Description rdf:about="&baseball;NLEast"/>
+            <rdf:Description rdf:about="&baseball;NLWest"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+
